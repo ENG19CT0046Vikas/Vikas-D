@@ -1,7 +1,8 @@
 //Write the program to print "vikas D !"
 #include <stdio.h>
+
 int main()
 {
-  print("vikas D");
+  printf("Vikas D\n");
   return 0;
 }
