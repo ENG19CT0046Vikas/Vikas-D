@@ -24,21 +24,21 @@ void show_output(float x, float y, float output)
 
 int main()
 {
-    float x1, x2, y1, y2,x,y,dist;
+    float a1,a2,b1,b2,x,y,dist;
     printf("For The First point:\n");
     printf("Enter The Value for X:\n");
-    x1 = input();
+    a1 = input();
     printf("Enter the Value For Y:\n");
-    y1 = input();
+    b1 = input();
     
     printf("For The Second point:\n");
     printf("Enter the Value For X:\n");
-    x2 = input();
+    a2 = input();
     printf("Enter the Value For Y:\n");
-    y2 = input();
+    b2 = input();
     
-    x = (x2 - x1);
-    y = (y2 - y1);
+    x = (a2 - a1);
+    y = (b2 - b1);
     
     dist = calc_dist(x, y);
     show_output(x,y,dist);
