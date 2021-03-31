@@ -6,9 +6,9 @@ struct point
 {
   float x1,x2,y1,y2;
 }
-a,b;
+v,j;
  
-float output(float first point,float second point)
+float output(float firstpoint,float secondpoint)
 {
   float distance;
   distance = sqrt(firstpoint*firstpoint + secondpoint*secondpoint);
@@ -17,28 +17,25 @@ float output(float first point,float second point)
   
 int main()
 {
-float first point,second point,Distance;
-printf("For the first point:\n");
+float firstpoint,secondpoint,Distance;
+printf("For the firstpoint:\n");
 printf("Enter the value for X:\n");
 scanf("%f",&v.x1);
 printf("Enter the value for Y:\n");
 scanf("%f",&v.y2);
   
-printf("For the second point:\n");
+printf("For the secondpoint:\n");
 printf("Enter the value For X;\n");
 scanf("%f",&j.x2);
 printf("Enter the value For Y:\n");
 scanf("%f",&j.y2);
 
-firstpoint = j.x2 - a.x1;
-secondpoint = j.y2 - a.y1;
+firstpoint = j.x2 - v.x1;
+secondpoint = j.y2 - v.y1;
   
-distance = Output(firstpoint,secondpoint);
+Distance = output(firstpoint,secondpoint);
   
 printf("the distance between the two points %f and %f: %f\n",firstpoint,secondpoint,Distance);
   
   return 0;
 }
-  
-
-
