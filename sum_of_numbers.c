@@ -1,13 +1,14 @@
 //Write a program to find the sum of n different numbers using 4 functions
-# include<stdio.h>
-Int main()
+#include<stdio.h>
+int display(int addition)
 {
-Int a,b,sum;
-printf(“enter first number:”);
-scanf(“%d”,&num1);
-printf(“enter second number:”);
-scanf(“%d”,&num2);
-Sum = num1 + num2:
-printf(“sum of the entered numbers: %d”,sum);
-return(0);
+printf("the sum of  all the given numbers after addition = %d\n",addition);
+}
+
+int compute(int array[],int size)
+{
+int addition = 0;
+for(int i = 0;i<size;i++)
+{
+addition = addition + array[i];
 }
