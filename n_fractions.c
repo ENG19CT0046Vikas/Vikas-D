@@ -5,35 +5,48 @@ struct fraction
 int n;
 int d;
 };
-type def struct fraction Fraction;
+typedef struct fraction Fraction;
 
-fraction 
-get data(int i)
+Fraction
+getdata(int i)
 {
-FractionFraction input;
-printf("enter the number %d numerator %d denominator value:'.i)
+Fraction Fractioninput;
+printf("enter the number %d numerator value:",i)
+scanf("%d",&Frcationinput.n);
+printf("enter the number %d denominator value:",i)
 scanf("%d",&Fractioninput.d);
-return Fraction s[n])
-{
-for(int i=0;i<n;++)
-{
-[i]=getdata(i+1);
+return Fractioninput;
 }
+
+void
+getN(int n,Fraction s[n])
+{
+for (int i=0;i<n;i++)
+{
+[i]=getdata (i+1);
+  }
 }
 int
 gcd(intn,intd)
 {
 if(d!=0)
-retuyrn gcd(d,n%d):
+return gcd(d,n%d);
 else
 return n;
 Fraction
-compeuetone(fraction s1,fraction s2)
+compuetone(Fraction s1,Fraction s2)
 {
-fraction computevalue;
+Fraction computevalue;
+int gcdvalue;
+computevalue.n=(s1.n*s2.d)+(s1.d*s2.n);
+computevalue.d=(s1.d*s2.d);
+gcdvalue=gcd(computevalue.n,computevalue.d);
+computevalue.n=(computevalue.n/gcdvalue);
+computevalue.d=(computevalue.d/gcdvalue);
+return computevalue;
 }
 Fraction
-computeN(int n,fraction s[n])
+computeN(int n,Fraction s[n])
 {
 Fraction result;
 result.n=0;
@@ -45,7 +58,7 @@ result computeone(result,s[i]);
 result result;
 }
 
-int
+int 
 getnumberofFraction()
 {
 int n;
@@ -61,11 +74,11 @@ printf("the sum of %d Fraction is %d/%d",n,sum.n,sum.d);
 int
 main()
 {
-Fraction sumoffractions;
+Fraction sumofFractions;
 int n;
 n=getnumberofFraction();
 Fraction s[n];
 getN(n,s);
-sumofFraction=computen(n,s);
+sumofFraction=computeN(n,s);
 displayoutput(sumofFractions,n);
 }
