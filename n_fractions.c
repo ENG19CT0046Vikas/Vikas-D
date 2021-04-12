@@ -1,84 +1,77 @@
 //WAP to find the sum of n fractions.
 #include<stdio.h>
-struct fraction
+struct Fraction
 {
-int n;
-int d;
+   int a;
+   int b;
 };
-typedef struct fraction Fraction;
+typedef struct Fraction fraction;
 
-Fraction
-getdata(int i)
+int gcd(int a,int b)
 {
-Fraction Fractioninput;
-printf("enter the number %d numerator value:",i)
-scanf("%d",&Frcationinput.n);
-printf("enter the number %d denominator value:",i)
-scanf("%d",&Fractioninput.d);
-return Fractioninput;
-}
-
-void
-getN(int n,Fraction s[n])
-{
-for (int i=0;i<n;i++)
-{
-[i]=getdata (i+1);
-  }
-}
-int
-gcd(intn,intd)
-{
-if(d!=0)
-return gcd(d,n%d);
-else
-return n;
-Fraction
-compuetone(Fraction s1,Fraction s2)
-{
-Fraction computevalue;
-int gcdvalue;
-computevalue.n=(s1.n*s2.d)+(s1.d*s2.n);
-computevalue.d=(s1.d*s2.d);
-gcdvalue=gcd(computevalue.n,computevalue.d);
-computevalue.n=(computevalue.n/gcdvalue);
-computevalue.d=(computevalue.d/gcdvalue);
-return computevalue;
-}
-Fraction
-computeN(int n,Fraction s[n])
-{
-Fraction result;
-result.n=0;
-result.d=1;
-for(int i=0;i<n;i++)
-{
-result computeone(result,s[i]);
-}
-result result;
+   int g;
+   for(int i=1;i<=a&&i<=b;i++)
+	{
+	   if(a%i==0&&b%i==0)
+	      g=i;
+	}
+	return g;
 }
 
-int 
-getnumberofFraction()
+fraction input(int x)
 {
-int n;
-printf("enter the number of fractions to be added:");
-scanf("%d",&n);
-return n;
+   fraction f;
+   printf("enter the fraction %d(numerator/denominator)",x);
+   scanf("%d%d",&f.a,&f.b);
+   return f;
 }
-void
-displayoutput(Fraction sum,int n)
+
+void input_n_fraction(int n,fraction f[])
 {
-printf("the sum of %d Fraction is %d/%d",n,sum.n,sum.d);
+   for(int i=0;i<n;i++)
+	{
+	   f[i]=input(i+1);
+	}
 }
-int
-main()
+fraction
+compute_one_fraction(fraction f1,fraction f2)
 {
-Fraction sumofFractions;
-int n;
-n=getnumberofFraction();
-Fraction s[n];
-getN(n,s);
-sumofFraction=computeN(n,s);
-displayoutput(sumofFractions,n);
+   fraction add;
+     add.a=(f1.a*f2.b)+(f2.a*f1.b);
+     add.b=(f1.b*f2.b);
+     return add;
+}
+fraction compute(int n,fraction f[])
+{
+   fraction sum=f[0];
+for(int i=1;i<n;i++)
+{
+sum=compute_one_fraction(f[i],sum);
+}
+
+int g=gcd(sum.a,sum.b);
+sum.a/=g;
+sum.b/=g;
+
+return sum;
+}
+void displaysum(fraction sum,fraction f[],int n)
+{
+   int i;
+   for(i=1;i<n-1;i++)
+   {
+    printf("%d/%d+",f[i].a,f[i].b);
+   }
+printf("%d/%d=%d/%d",f[n-1].a,f[n-1].b,sum.a,sum.b);
+}
+int main()
+{
+   fraction f[100];
+   int n;
+   fraction sum;
+   printf("enter the value of n:");
+   scanf("%d",&n);
+   input_n_fraction(n,f);
+   sum=compute(n,f);
+   displaysum(sum,f,n);
 }
